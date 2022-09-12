@@ -3,13 +3,13 @@ const mongoose = require("mongoose");
 // Declare schema
 const ProductSchema = new mongoose.Schema(
   {
-    title: String,
-    price: Number,
-    description: String,
+    title: { type: String },
+    price: { type: Number },
+    description: { type: String },
   },
   { timestamps: true }
 );
 // Declare model
-const Product = mongoose.model("product", ProductSchema);
+const Product = mongoose.model("Product", ProductSchema);
 // Export model
 module.exports = Product;
