@@ -3,7 +3,7 @@ import axios from "axios";
 // components
 import Product from "./Product";
 
-const AllProducts = ({ getProducts }) => {
+const AllProducts = ({ getProducts, setGetProducts }) => {
   const [allProducts, setAllProducts] = useState([]);
   useEffect(() => {
     axios
@@ -17,7 +17,12 @@ const AllProducts = ({ getProducts }) => {
     <div>
       <h2>All Products</h2>
       {allProducts.map((product, idx) => (
-        <Product product={product} key={idx} />
+        <Product
+          product={product}
+          key={idx}
+          setGetProducts={setGetProducts}
+          getProducts={getProducts}
+        />
       ))}
     </div>
   );
